@@ -1,0 +1,7 @@
+entity: user
+items:
+  user{1..10}:
+    id: '{{datatype.uuid}}'
+    username: 'user($current)'
+    # password: test
+    password: '$2b$12$j2.swXrwzXe/H2.CA.LyG.cp0fpCX5QdiwDOX6hnLjxtMIk8uOaji'

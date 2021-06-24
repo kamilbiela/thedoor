@@ -1,0 +1,26 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:13.1
+    environment:
+      POSTGRES_PASSWORD: open
+      POSTGRES_USER: thedoor
+      POSTGRES_DB: thedoor
+    ports:
+      - 25433:5432
+
+  db-test:
+    image: postgres:13.1
+    environment:
+      POSTGRES_PASSWORD: open
+      POSTGRES_USER: thedoor_test
+      POSTGRES_DB: thedoor_test
+    ports:
+      - 25434:5432
+
+  # mailhog:
+  #   image: mailhog/mailhog:v1.0.1
+  #   ports:
+  #     - 21025:1025
+  #     - 28025:8025

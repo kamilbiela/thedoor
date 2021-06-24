@@ -1,0 +1,241 @@
+@import '~modern-css-reset';
+@import './assets/font/style.css';
+
+$sidebar-width: 80px;
+$topbar-height: 80px;
+$gutter: 32px;
+$spacing: 24px;
+
+$color-blue-1: #CFD2D9;
+$color-gray-blue: #F5F7FA;
+
+$color-bg: $color-gray-blue;
+$color-brand: #0085FF;
+$color-text: #c7c7c7;
+$color-text-main: #000;
+$color-text-main2: #262626;
+$color1: #E2E5EC;
+$color-main-stroke: $color-blue-1;
+$color-form-focus: $color-blue-1;
+
+$color-list-description: #7d7d7d;
+$color-list-title: $color-text-main;
+
+$form-border-radius: 4px;
+$border-radius: 6px;
+
+body {
+  background-color: $color-bg;
+  font-family: 'Rubik Regular';
+  line-height: 1;
+}
+
+button {
+  cursor: pointer;
+}
+
+.sidebar {
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: $sidebar-width;
+  background-color: #1B1D29;
+}
+
+.topbar {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: $sidebar-width;
+  right: 0;
+  height: $topbar-height;
+  background-color: #fff;
+  display: flex;
+  padding: 18px $gutter 0;
+
+  &__info {
+    & + & {
+      margin-left: $spacing;
+    }
+
+    &__title {
+      color: $color-text;
+      display: block;
+      font-size: 13px;
+      line-height: 19px;
+    }
+
+    &__value {
+      color: $color-text-main;
+      font-size: 19px;
+      line-height: 26px;
+    }
+  }
+}
+
+.content {
+  margin-left: $sidebar-width + $gutter;
+  margin-right: $gutter;
+  margin-top: $topbar-height + $spacing;
+  margin-bottom: $spacing;
+}
+
+.list {
+  margin-top: $spacing;
+
+  &__item {
+    padding: $spacing $gutter;
+    border: 1px solid $color1;
+    box-sizing: border-box;
+    border-radius: 6px;
+    background-color: #fff;
+    display: flex;
+
+    & + & {
+      margin-top: $spacing;
+    }
+
+    &__col {
+      & + & {
+        margin-left: $spacing;
+      }
+
+      &--main {
+        flex-grow: 2;
+      }
+
+      flex-grow: 1;
+    }
+
+    &__title {
+      font-size: 29px;
+      line-height: 42px;
+      color: $color-list-title;
+    }
+
+    &__description {
+      font-size: 15px;
+      color: $color-list-description;
+    }
+
+    &__form {
+      margin-top: 18px;
+
+      button {
+        width: 100%;
+        line-height: 46px;
+        height: 48px;
+        border-radius: $form-border-radius;
+        background-color: $color-brand;
+        border: none;
+        font-size: 19px;
+        color: #fff;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.page-title {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-size: 39px;
+  font-weight: 300;
+}
+
+.filter {
+  &__title {
+    line-height: 17px;
+    font-size: 11px;;
+    margin-bottom: 7px;
+  }
+
+  &__fields {
+    display: flex;
+
+    &__field {
+      & + & {
+        margin-left: 8px;
+      }
+
+      input[type="text"] {
+        width: 300px;
+        font-size: 15px;
+        color: $color-text-main2;
+        height: 48px;
+        padding-left: 17px;
+        padding-right: 17px;
+        border-radius: $form-border-radius;
+        border: 1px solid $color-main-stroke;
+
+        &:focus {
+          border-color: $color-form-focus;
+        }
+      }
+
+      button[type="button"] {
+        width: 150px;
+        height: 48px;
+        font-size: 19px;
+        color: $color-text-main2;
+        border: 1px solid $color-main-stroke;
+        border-radius: $form-border-radius;
+        background-color: $color-bg;
+      }
+    }
+  }
+}
+
+.promocode {
+  &__title {
+    line-height: 16px;
+    letter-spacing: 0.015em;
+    text-transform: uppercase;
+    color: #7d7d7d;
+    font-size: 11px;
+  }
+
+  &__code {
+    position: relative;
+    border: 1px solid $color-main-stroke;
+    border-radius: $form-border-radius;
+    line-height: 46px;
+    color: $color-text-main2;
+    padding: 0 48px 0 16px;
+
+    &__copy {
+      position: absolute;
+      top: 15px;
+      right: 16px;
+      background-color: transparent;
+      border: none;
+      width: 16px;
+      height: 16px;
+      background-image: url('assets/icons/copy.png');
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.is-loading {
+  line-height: 17px;
+  font-size: 11px;
+  color: $color-text-main;
+}
+
+.load-more {
+  padding: $spacing;
+  text-align: center;
+
+  button {
+    width: 150px;
+    height: 32px;
+    font-size: 16px;
+    color: $color-text-main2;
+    border: 1px solid $color-main-stroke;
+    border-radius: $form-border-radius;
+    background-color: $color-bg;
+  }
+}

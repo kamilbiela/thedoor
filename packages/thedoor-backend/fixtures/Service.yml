@@ -1,0 +1,7 @@
+entity: service
+items:
+  service{1..20}:
+    id: '{{datatype.uuid}}'
+    name: 'service($current).com'
+    description: 'Some service description ($current)'
+    promocode: 'PROMO($current)'
