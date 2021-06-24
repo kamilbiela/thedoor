@@ -44,6 +44,7 @@ const App: React.FC<{}> = () => {
         <ServiceListFilter onFilter={(filter) => {
           setServices([]);
           setServiceNameFilter(filter);
+          setCurrentPage(1);
         }} />
         <ServiceList services={services} isLoading={isLoadingServices} hasMore={!!nextPage} onLoadMore={onLoadMore} />
       </div>
