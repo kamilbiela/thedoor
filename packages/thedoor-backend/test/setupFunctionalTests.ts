@@ -19,7 +19,7 @@ beforeEach(async () => {
     if (app) {
       await app.stop();
     }
-    // await resetDb();
+    await resetDb();
 
     const httpPort = global['__PORT__'];
 
